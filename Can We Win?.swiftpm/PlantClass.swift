@@ -6,4 +6,4 @@ struct Drink: Identifiable, Codable, Equatable{
     var name: String
     var price: Int
     var location: String
-    }
+}

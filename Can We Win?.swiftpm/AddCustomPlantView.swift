@@ -24,11 +24,11 @@ struct AddCustomPlantView: View {
                         
                         TextField("Place You Bought It From (Be Specific)", text: $location)
                     }
-                            Text("Minimum Temperature")
-                            TextField("", value: $price, formatter: NumberFormatter())
-                                .frame(width: 50)
-                                .padding(.leading)
-                        
+                    Text("Minimum Temperature")
+                    TextField("", value: $price, formatter: NumberFormatter())
+                        .frame(width: 50)
+                        .padding(.leading)
+                    
                     
                     Button("Save") {
                         

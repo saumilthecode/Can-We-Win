@@ -3,9 +3,9 @@ import SwiftUI
 struct OnboardingView: View {
     @ObservedObject var plantManager = PlantManager()
     var body: some View {
-
-            AddCustomPlantView(plants: $plantManager.plants)
-
+        
+        AddCustomPlantView(plants: $plantManager.plants)
+        
     }
 }
 

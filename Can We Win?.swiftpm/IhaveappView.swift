@@ -2,17 +2,16 @@
 import SwiftUI
 
 struct IhaveappView: View {
-
+    
     
     @StateObject var plantManager = PlantManager()
     
     @State var isNewPlantPresented = false
     @State var isOnboardingPresented = false
     
-//    @AppStorage("IsFirstLaunch") var isFirstLaunch = true
     
     var body: some View {
-
+        
         NavigationView {
             List {
                 ForEach($plantManager.plants) { $plant in
@@ -52,12 +51,6 @@ struct IhaveappView: View {
         .onChange(of: plantManager.plants) { newValue in
             isOnboardingPresented = newValue.isEmpty
         }
-//        .onAppear {
-////            if isFirstLaunch {
-////                isOnboardingPresented = true
-////                isFirstLaunch = false
-////            }
-//        }
     }
 }
 
