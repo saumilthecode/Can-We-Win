@@ -4,6 +4,6 @@ import Foundation
 struct Drink: Identifiable, Codable, Equatable{
     var id = UUID()
     var name: String
-    var price: Int
+    var price: String
     var location: String
 }

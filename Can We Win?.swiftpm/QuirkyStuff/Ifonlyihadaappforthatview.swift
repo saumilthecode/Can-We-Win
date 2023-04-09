@@ -12,6 +12,8 @@ import SwiftUI
 @available(iOS 16.0, *)
 struct Ifonlyihadaappforthatview: View {
     
+    @StateObject var plantManager = PlantManager()
+
     @State private var x1 = 0
     @State private var y1 = 0
     
@@ -79,7 +81,7 @@ struct Ifonlyihadaappforthatview: View {
                 }
                 if isShowingNext {
                     
-                    NavigationLink(destination: IhaveappView()) {
+                    NavigationLink(destination: FirstTimeView(plants: $plantManager.plants)) {
                         Text("Next View!")
                             .padding()
                             .buttonBorderShape(.roundedRectangle)

@@ -1,6 +1,7 @@
 
 import SwiftUI
 
+@available(iOS 16.0, *)
 struct IhaveappView: View {
     
     
@@ -12,7 +13,7 @@ struct IhaveappView: View {
     
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach($plantManager.plants) { $plant in
                     NavigationLink(destination: CanDetailView(plants: $plant)) {
@@ -28,7 +29,6 @@ struct IhaveappView: View {
                 }.onMove { source, destination in
                     plantManager.plants.move(fromOffsets: source, toOffset: destination)
                 }
-                
             }
             .navigationTitle("My Drinks")
             .toolbar {
@@ -43,14 +43,14 @@ struct IhaveappView: View {
                     }
                 }
             }
-        }.sheet(isPresented: $isNewPlantPresented) {
-            AddCustomPlantView(plants: $plantManager.plants)
-        }.sheet(isPresented: $isOnboardingPresented) {
-            OnboardingView()
-        }
-        .onChange(of: plantManager.plants) { newValue in
-            isOnboardingPresented = newValue.isEmpty
+            .sheet(isPresented: $isNewPlantPresented) {
+                AddCustomPlantView(plants: $plantManager.plants)
+            }.sheet(isPresented: $isOnboardingPresented) {
+                OnboardingView()
+            }
+            .onChange(of: plantManager.plants) { newValue in
+                isOnboardingPresented = newValue.isEmpty
+            }
         }
     }
 }
-

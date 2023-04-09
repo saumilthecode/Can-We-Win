@@ -5,7 +5,7 @@ import SwiftUI
 struct AddCustomPlantView: View {
     
     @State var name: String = ""
-    @State var price: Int = 0
+    @State var price: String = ""
     @State var location: String = ""
     
     @Binding var plants: [Drink]
@@ -25,7 +25,7 @@ struct AddCustomPlantView: View {
                         TextField("Place You Bought It From (Be Specific)", text: $location)
                     }
                     Text("Minimum Temperature")
-                    TextField("", value: $price, formatter: NumberFormatter())
+                    TextField("", text: $price)
                         .frame(width: 50)
                         .padding(.leading)
                     
@@ -43,9 +43,11 @@ struct AddCustomPlantView: View {
                     }
                 }
             }
-            .navigationTitle("Add Custom Drink")
+            .navigationTitle("Add Custom Can")
         }
-    }}
+    }
+    
+}
 
 struct AddCustomPlantView_Previews: PreviewProvider {
     static var previews: some View {

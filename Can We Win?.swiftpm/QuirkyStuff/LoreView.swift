@@ -19,6 +19,9 @@ struct LoreView: View {
     @State private var x2 = 0
     @State private var y2 = 0
     
+    @State private var x4 = 0
+    @State private var y4 = 0
+    
     @State var buttonTitle: String = "Next "
     
     @State private var isShowingNext = false
@@ -34,6 +37,9 @@ struct LoreView: View {
                         .offset(x : CGFloat(x1) , y: CGFloat(y1))
                     Text("🥫")
                         .offset(x : CGFloat(x2) , y: CGFloat(y2))
+//                    Image("SCR-20230408-rlrc")
+//                        .offset(x : CGFloat(x4) , y: CGFloat(y4))
+
                 }
                 
                 

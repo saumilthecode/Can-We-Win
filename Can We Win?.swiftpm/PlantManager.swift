@@ -47,3 +47,4 @@ class PlantManager: ObservableObject {
         plants = finalPlants
     }
 }
+

@@ -30,7 +30,7 @@ struct CanDetailView: View {
                         Text("Price")
                         Spacer()
                         
-                        Text("You paid \(plants.price)")
+                        Text("You paid $ \(plants.price)")
                             .foregroundColor(Color(.gray))
                     }
                 }
@@ -55,7 +55,7 @@ struct CanDetailView: View {
 
 struct PlantDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CanDetailView(plants: .constant(Drink(name: "Lorem Ipsum", price: 0, location: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")))
+        CanDetailView(plants: .constant(Drink(name: "Hot Chocolate", price: "potato milk", location: "byd store.")))
     }
 }
 
